@@ -1,5 +1,26 @@
 <h1>Neues Rezept anlegen</h1>
 <%= form_for(@recipe) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
 
+  <div>
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients %>
+  </div>
 
+  <div>
+    <%= f.label :preparations %>
+    <%= f.text_area :preparations %>
+  </div>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>
