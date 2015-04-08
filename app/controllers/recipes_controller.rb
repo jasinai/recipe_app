@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to action: 'new', notice: 'Idea was successfully created.'
+      redirect_to @recipe, notice: 'Idea was successfully created.'
     else
       render action: 'new'
     end
