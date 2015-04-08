@@ -21,6 +21,16 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update_attributes(recipe_params)
+      redirect_to @recipe, notice: 'Recipe was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
   private
     def recipe_params
       params.require(:recipe).permit(:title, :ingredients, :preparations, :image)
