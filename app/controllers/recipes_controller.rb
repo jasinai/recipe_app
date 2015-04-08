@@ -30,6 +30,12 @@ class RecipesController < ApplicationController
       render action: 'edit'
     end
   end
+  
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to action: 'new', notice: 'Idea was successfully deleted.'
+  end
 
   private
     def recipe_params
